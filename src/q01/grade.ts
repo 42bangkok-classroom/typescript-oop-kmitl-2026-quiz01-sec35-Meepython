@@ -1,24 +1,30 @@
+import { isStringObject } from "node:util/types";
+
 export{}
 
-let input = parseInt(process.argv[2]);
+let input = process.argv[2];
 
 console.log(input);
+console.log(typeof(input));
 
-if (input < 0 || isNaN(input) || input > 100) {
+if (Number(input) < 0 || typeof input === 'string' || Number(input) > 100) { //Number(input) < 0 || isStringObject(input) || Number(input) > 100)
     console.log('Invalid Input');
     process.exit(0);
 }
 
-if (input >= 80) {
+let grade = Number(input);
+
+if (grade >= 80) {
     console.log('Grade is A');
-} else if (input >= 70) {
+} else if (grade >= 70) {
     console.log('Grade is B');
-} else if (input >= 60) {
+} else if (grade >= 60) {
     console.log('Grade is C');
-} else if (input >= 50) {
+} else if (grade >= 50) {
     console.log('Grade is D');
-} else if (input < 50) {
+} else if (grade < 50) {
     console.log('Grade is F')
 } else {
     console.log('Invalid Input');
 }
+    
