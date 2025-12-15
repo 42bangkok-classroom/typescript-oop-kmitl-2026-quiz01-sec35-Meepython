@@ -2,8 +2,9 @@ export{}
 
 let input = parseInt(process.argv[2]);
 
-if (input < 0 || isNaN(input)) {
+if (input < 0 || isNaN(input) || input > 100) {
     console.log('Invalid Input');
+    process.exit(0);
 }
 
 if (input >= 80) {
