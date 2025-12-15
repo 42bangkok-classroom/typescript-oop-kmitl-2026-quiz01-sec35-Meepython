@@ -2,6 +2,10 @@ export{}
 
 let input = parseInt(process.argv[2]);
 
+if (input < 0 || isNaN(input)) {
+    console.log('Invalid Input');
+}
+
 if (input >= 80) {
     console.log('Grade is A');
 } else if (input >= 70) {
