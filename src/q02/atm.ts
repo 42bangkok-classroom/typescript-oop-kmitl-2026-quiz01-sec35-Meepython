@@ -1,25 +1,30 @@
 export {}
 
-const AccountBalanceInput:string = process.argv[2]
-const WithdrawalAmountInput:string = process.argv[3]
+const accountBalanceInput:string = process.argv[2]
+const withdrawalAmountInput:string = process.argv[3]
 
-const AccountBalance:number = Number(AccountBalanceInput)
-const WithdrawalAmount:number = Number(WithdrawalAmountInput)
-
-if (AccountBalanceInput.trim() === "" || WithdrawalAmountInput.trim() === "" || AccountBalanceInput === undefined || WithdrawalAmountInput === undefined) {
-    console.log("Invalid Input")
-    process.exit(1)
+if (accountBalanceInput === undefined || withdrawalAmountInput === undefined) {
+  console.log("Invalid Input");
+  process.exit(0);
 }
 
-if (Number.isNaN(AccountBalance) || Number.isNaN(WithdrawalAmount)) {
-    console.log("Invalid Input")
-    process.exit(1)
+if (accountBalanceInput.trim() === "" || withdrawalAmountInput.trim() === "") {
+  console.log("Invalid Input");
+  process.exit(0);
 }
 
-if (WithdrawalAmount > AccountBalance) {
-    console.log("Insufficient balance")
-} else if (WithdrawalAmount > 5000) {
-    console.log("Exceeds per-withdrawal limit")
+const accountBalance: number = Number(accountBalanceInput);
+const withdrawalAmount: number = Number(withdrawalAmountInput);
+
+if (Number.isNaN(accountBalance) || Number.isNaN(withdrawalAmount)) {
+  console.log("Invalid Input");
+  process.exit(0);
+}
+
+if (withdrawalAmount > accountBalance) {
+  console.log("Insufficient balance");
+} else if (withdrawalAmount > 5000) {
+  console.log("Exceeds limit");
 } else {
-    console.log("Withdrawal approved")
+  console.log("approved");
 }
