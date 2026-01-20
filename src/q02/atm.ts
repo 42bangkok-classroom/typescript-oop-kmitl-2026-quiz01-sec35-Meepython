@@ -1,15 +1,15 @@
 export {}
 
-const AccountBalanceInput = process.argv[2]
-const WithdrawalAmountInput = process.argv[3]
+const AccountBalanceInput:string = process.argv[2]
+const WithdrawalAmountInput:string = process.argv[3]
 
-if (AccountBalanceInput === undefined || WithdrawalAmountInput === undefined) {
+const AccountBalance:number = Number(AccountBalanceInput)
+const WithdrawalAmount:number = Number(WithdrawalAmountInput)
+
+if (Number.isNaN(AccountBalanceInput) || Number.isNaN(WithdrawalAmountInput)) {
     console.log("Invalid Input")
     process.exit(1)
 }
-
-const AccountBalance = Number(AccountBalanceInput)
-const WithdrawalAmount = Number(WithdrawalAmountInput)
 
 if (WithdrawalAmount > AccountBalance) {
     console.log("Insufficient balance")
