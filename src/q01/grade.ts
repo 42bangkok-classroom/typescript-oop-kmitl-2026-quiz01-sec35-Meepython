@@ -2,17 +2,17 @@ import { isStringObject } from "node:util/types";
 
 export{}
 
-let input:string = process.argv[2];
+let input:number = Number(process.argv[2]);
 
-if (Number(input) < 0 || Number(input) > 100) { //Number(input) < 0 || isStringObject(input) || Number(input) > 100)
+if (isNaN(input) || input < 0 || input > 100) { 
     console.log('Invalid Input');
-    process.exit(0);
-} else if (typeof input === 'string') {
+    process.exit(1);
+} else if (typeof input === "string") {
     console.log('Invalid Input');
-    process.exit(0);
+    process.exit(1);
 }
 
-let grade = Number(input);
+let grade:number = input;
 
 if (grade >= 80) {
     console.log('Grade is A');
