@@ -3,9 +3,6 @@ export{}
 let ab = Number(process.argv[2]); // Account Balance
 let wa = Number(process.argv[3]); // Withdrawal Amount
 
-console.log(typeof(ab), typeof(wa));
-console.log((ab), (wa));
-
 if (isNaN(ab) || isNaN(wa) || ab === undefined || wa === undefined) {
     console.log('Invalid Input');
     process.exit(0);

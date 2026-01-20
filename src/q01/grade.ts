@@ -2,12 +2,12 @@ import { isStringObject } from "node:util/types";
 
 export{}
 
-let input = process.argv[2];
+let input:string = process.argv[2];
 
-console.log(input);
-console.log(typeof(input));
-
-if (Number(input) < 0 || typeof input === 'string' || Number(input) > 100) { //Number(input) < 0 || isStringObject(input) || Number(input) > 100)
+if (Number(input) < 0 || Number(input) > 100) { //Number(input) < 0 || isStringObject(input) || Number(input) > 100)
+    console.log('Invalid Input');
+    process.exit(0);
+} else if (typeof input === 'string') {
     console.log('Invalid Input');
     process.exit(0);
 }
