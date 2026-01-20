@@ -21,10 +21,11 @@ if (Number.isNaN(accountBalance) || Number.isNaN(withdrawalAmount)) {
   process.exit(0);
 }
 
-if (withdrawalAmount > accountBalance) {
-  console.log("Insufficient balance");
-} else if (withdrawalAmount > 5000) {
+if (withdrawalAmount > 5000) {
   console.log("Exceeds limit");
+} else if (withdrawalAmount > accountBalance) {
+  console.log("Insufficient balance");
 } else {
   console.log("approved");
 }
+
