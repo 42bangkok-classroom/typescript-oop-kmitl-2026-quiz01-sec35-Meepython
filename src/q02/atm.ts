@@ -3,7 +3,7 @@ export {}
 const AccountBalanceInput = process.argv[2]
 const WithdrawalAmountInput = process.argv[3]
 
-if (!AccountBalanceInput || !WithdrawalAmountInput) {
+if (AccountBalanceInput === undefined || WithdrawalAmountInput === undefined) {
     console.log("Invalid Input")
     process.exit(1)
 }
