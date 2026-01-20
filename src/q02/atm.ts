@@ -6,7 +6,7 @@ const WithdrawalAmountInput:string = process.argv[3]
 const AccountBalance:number = Number(AccountBalanceInput)
 const WithdrawalAmount:number = Number(WithdrawalAmountInput)
 
-if (Number.isNaN(AccountBalanceInput) || Number.isNaN(WithdrawalAmountInput)) {
+if (Number.isNaN(AccountBalance) || Number.isNaN(WithdrawalAmount)) {
     console.log("Invalid Input")
     process.exit(1)
 }
